@@ -2,17 +2,25 @@ class ItemsController < ApplicationController
 
   # GET: /items
   get "/items" do
+    @items = Item.all
     erb :"/items/index.html"
   end
 
   # GET: /items/new
   get "/items/new" do
+
     erb :"/items/new.html"
   end
 
   # POST: /items
   post "/items" do
-    redirect "/items"
+    
+    @item = Item.new(params[:item])
+    if @item.save
+      redirect "/items"
+    else
+      redirect "/items/new"
+    end
   end
 
   # GET: /items/5
