@@ -1,1 +1,15 @@
-<h1>This is the Model's index page.</h1>
+<h1>Everything you own</h1>
+<br />
+<br />
+<% @items.each do |item| %>
+<div class="item">
+  <ul>
+    <li>Name: <%= item.name %></li>
+    <li>Price: <%= item.purchase_price %></li>
+    <li>Date purchased: <%= item.purchase_date %></li>
+    <li>Store: <%= item.store_purchased_from %></li>
+    <li><a href="/items/<%=item.id%>/edit">Edit</a></li>
+    <li><a href="items/<%=item.id%>/delete">Delete</a></li>
+  </ul>
+</div>
+<% end %>

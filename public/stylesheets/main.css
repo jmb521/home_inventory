@@ -1,3 +1,4 @@
+
 @media screen {
   /* --- Reset Styles --- */
   * {
@@ -13,7 +14,7 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
+    background-color: purple;
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
@@ -80,6 +81,16 @@
     border-top: 2px solid #ccc;
     margin-top: 20px;
     padding-top: 20px;
+  }
+  div.item {
+    margin-bottom: 15px;
+  }
+  div.item:nth-child(even) {
+    background-color: #e5f5f9;
+
+  }
+  div.item:nth-child(odd) {
+    background-color: #e9ebee;
   }
 }
 

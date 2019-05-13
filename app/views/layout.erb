@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 
-    <title>HomeInventory</title>
+    <title>Home Inventory</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -15,7 +15,18 @@
   </head>
   <body>
     <div class="wrapper">
-
+      <br />
+      <nav>
+        <ul style="text-decoration: none; display: inline">
+          <li style="display:inline; padding:10px;"><a href="/">Home</a></li>
+          <% if logged_in? %>
+          <li style="display:inline; padding:10px;"><a href="/users/<% current_user.id %>">Profile</a></li>
+          <li style="display:inline; padding:10px;">Add Item</li>
+          <li style="display:inline; padding:10px;">Your inventory</li>
+          <% end %>
+        </ul>
+      </nav>
+      <br />
         <%= yield %>
 
       <footer class="branding">
